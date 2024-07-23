@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-#from django.views.decorators.csrf import csrf_exempt
+from django.views import generic
+from .models import Post
+
 
 # Create your views here.
-#@csrf_exempt
-def my_blog(request):
-    return HttpResponse("Hello, Blog!")
+class PostList(generic.ListView):
+    model = Post
